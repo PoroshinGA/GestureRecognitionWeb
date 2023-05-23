@@ -10,8 +10,32 @@
   <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
   <style>
     .headTextSize {
-            font-size: 1.75rem;
-        }
+        font-size: 1.75rem;
+    }
+    .filter {
+        padding: 0.8rem 1.6rem;
+        color: #ffffff;
+        font-size: 1.6rem;
+        background: #ffffff;
+        border-radius: 5.4rem;
+        opacity: 1;
+        display: inline-block;
+        margin: 0 auto;
+        text-align: center;
+        width:100%;
+        justify-content: center;
+    }
+    .filterText {
+        padding: 0rem 1.6rem;
+        color: #ffffff;
+        font-size: 1rem;
+        background: #7f6083;
+        border-radius: 5.4rem;
+        opacity: 1;
+        display: inline-block;
+        margin: 0 auto;
+        text-align: center;
+    }
   </style>
 
 </head>
@@ -28,13 +52,7 @@
   <video hidden class="input_video"></video>
   <canvas class="output_canvas" width="1280px" height="720px"></canvas>
 </div>
-<div class="p-3 mb-4 bg-body-tertiary rounded-3">
-  <div class="col-md-6">
-    <div class="h-100 p-5 text-bg-dark rounded-3">
-      <h2 id="myTextArea"></h2>
-    </div>
-  </div>
-</div>
+<div class="filter"><div class="filterText" id="myTextArea"></div></div>
 </body>
 <script type="module">
 const videoElement = document.getElementsByClassName('input_video')[0];
@@ -115,7 +133,6 @@ function onResults(results) {
         dataCollection.push(handPositionY[i]);
       }
       document.getElementById('myTextArea').innerHTML = letters[score(dataCollection).indexOf(Math.max(...score(dataCollection)))];
-      console.log("@dataCollection", score(dataCollection).indexOf(Math.max(...score(dataCollection))));
 
       handPositionX.length = 0;
       handPositionY.length = 0;
