@@ -1,60 +1,3 @@
-<!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-  <title th:text="${title}"/>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils/control_utils.js" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
-  <style>
-    .headTextSize {
-        font-size: 1.75rem;
-    }
-    .filter {
-        padding: 0.8rem 1.6rem;
-        color: #ffffff;
-        font-size: 1.6rem;
-        background: #ffffff;
-        border-radius: 5.4rem;
-        opacity: 1;
-        display: inline-block;
-        margin: 0 auto;
-        text-align: center;
-        width:100%;
-        justify-content: center;
-    }
-    .filterText {
-        padding: 0rem 1.6rem;
-        color: #ffffff;
-        font-size: 1rem;
-        background: #7f6083;
-        border-radius: 5.4rem;
-        opacity: 1;
-        display: inline-block;
-        margin: 0 auto;
-        text-align: center;
-    }
-  </style>
-
-</head>
-<body>
-<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
-  <h5 class="my-0 mr-md-auto headTextSize">Gesture Recognition</h5>
-  <nav class="my-2 my-md-0 mr-md-3">
-    <a class="p-2 text-dark" href="/">Главная</a>
-    <a class="p-2 text-dark" href="settings">Настройки</a>
-    <a class="p-2 text-dark" href="info">О проекте</a>
-  </nav>
-</div>
-<div class="container">
-  <video hidden class="input_video"></video>
-  <canvas class="output_canvas" width="1280px" height="720px"></canvas>
-</div>
-<div class="filter"><div class="filterText" id="myTextArea"></div></div>
-</body>
-<script type="module">
 const videoElement = document.getElementsByClassName('input_video')[0];
 const canvasElement = document.getElementsByClassName('output_canvas')[0];
 const canvasCtx = canvasElement.getContext('2d');
@@ -161,5 +104,3 @@ const camera = new Camera(videoElement, {
   height: 720
 });
 camera.start();
-</script>
-</html>
