@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Main-Class: com.FirstSpringBootProject.FirstSpringBootProject.FirstSprin
+ gBootProjectApplication
+Class-Path: D:\Jetbrains\IdeaProjects\FirstSpringBootProject\
+
